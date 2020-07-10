@@ -9,7 +9,6 @@ public class PlatformerCharacterController : MonoBehaviour
     [SerializeField] Transform Model = null;
     [SerializeField] Animator Animator = null;
 
-
     [Header("Movement")]
     [SerializeField] float speed = 0.0f;
     [Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;
@@ -71,8 +70,7 @@ public class PlatformerCharacterController : MonoBehaviour
         Animator.SetBool(animatorGroundedBool, isGrounded);
 
         // Landed
-        if (tmp != isGrounded && isGrounded)
-            CinemachineShake.ShakeCamera(1, 0.33f);
+        if (tmp != isGrounded && isGrounded) { }
     }
 
     private void UpdateJump()

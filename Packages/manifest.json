@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
     "com.unity.2d.animation": "4.2.4",
     "com.unity.2d.ik": "3.0.2-preview.1",
     "com.unity.2d.psdimporter": "3.1.4",
@@ -46,5 +47,11 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
+  },
+  "lock": {
+    "com.dbrizov.naughtyattributes": {
+      "revision": "upm",
+      "hash": "8361c4c50a4f375cfac3cdb67ebd3babf15c42d8"
+    }
   }
 }
