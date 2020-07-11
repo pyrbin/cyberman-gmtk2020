@@ -11,28 +11,37 @@ public class LevelGenerator : MonoBehaviour
 {
 
     public Tilemap tilemap;
-
     public TileBase tile;
 
+    [MinMaxSlider(-100, 100)]
+    public Vector2 renderRange;
+
+    public bool renderAll = false;
+
+    public Transform player;
 
     private int[,] map;
 
     private MapSettings mapSettings;
 
-    // Start is called before the first frame update
+
     void Awake()
     {
         mapSettings = GetComponent<MapSettings>();
         GenerateMap();
     }
 
+    void Update()
+    {
+        RenderMap(map, tilemap, tile);
+    }
+
     [Button("Generate map")]
     public void GenerateMap()
     {
         ClearMap();
-        var map = mapSettings.GenerateArray();
+        map = mapSettings.GenerateArray();
         mapSettings.ApplySettings(ref map);
-        RenderMap(map, tilemap, tile);
     }
 
     public void ClearMap()
@@ -50,7 +59,29 @@ public class LevelGenerator : MonoBehaviour
     public void RenderMap(int[,] map, Tilemap tilemap, TileBase tile)
     {
         tilemap.ClearAllTiles(); //Clear the map (ensures we dont overlap)
-        for (int x = 0; x < map.GetUpperBound(0); x++) //Loop through the width of the map
+
+        int startRender = Mathf.FloorToInt(player.position.x + renderRange.x);
+        int endRender = Mathf.FloorToInt(player.position.x + renderRange.y);
+
+        // Dont render beyond the edge of the map
+        if (endRender > map.GetUpperBound(0))
+            endRender = map.GetUpperBound(0);
+
+        // Dont render beyond the edge of the map
+        if (startRender < 0)
+            startRender = 0;
+
+
+        if (renderAll)
+        {
+            startRender = 0;
+            endRender = endRender + 500;
+            // Dont render beyond the edge of the map
+            if (endRender > map.GetUpperBound(0))
+                endRender = map.GetUpperBound(0);
+        }
+
+        for (int x = startRender; x < endRender; x++) //Loop through the width of the map
         {
             for (int y = 0; y < map.GetUpperBound(1); y++) //Loop through the height of the map
             {
@@ -61,5 +92,6 @@ public class LevelGenerator : MonoBehaviour
             }
         }
     }
+
 
 }

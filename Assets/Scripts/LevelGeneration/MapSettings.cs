@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using NaughtyAttributes;
 using System.Runtime.CompilerServices;
+using System;
 
 public class MapSettings : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class MapSettings : MonoBehaviour
     public int width;
 
     public int height;
+
+    public int chunkSize;
 
     [ReorderableList]
     public List<MapFunction> mapFunctions;
@@ -27,7 +30,12 @@ public class MapSettings : MonoBehaviour
 
     public int[,] GenerateArray()
     {
-        int[,] map = new int[width, height];
+        return GenerateArray(width, height);
+    }
+
+    public int[,] GenerateArray(int w, int h)
+    {
+        int[,] map = new int[w, h];
         for (int x = 0; x < map.GetUpperBound(0); x++)
         {
             for (int y = 0; y < map.GetUpperBound(1); y++)
@@ -37,5 +45,4 @@ public class MapSettings : MonoBehaviour
         }
         return map;
     }
-
 }

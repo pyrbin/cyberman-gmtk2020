@@ -22,7 +22,6 @@ public class AddGaps : MapFunction
             if (sectionWidth >= minWidth || gap == null)
             {
                 float r = Random.Range(0f, 1f);
-                Debug.Log(r);
                 if (r < chanceOfGap)
                     gap = true;
                 else
