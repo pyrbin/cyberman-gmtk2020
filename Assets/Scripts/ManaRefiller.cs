@@ -41,7 +41,7 @@ public class ManaRefiller : MonoBehaviour
             return;
         for (int i = FilledManaUnitList.Count-1; i >= 0; i--){
             ManaUnitScript manaPip = FilledManaUnitList[i];
-            
+            FilledManaUnitList
         }
     }
 }
