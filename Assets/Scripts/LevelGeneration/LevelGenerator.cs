@@ -1,61 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using NaughtyAttributes;
+using UnityEngine;
+
 using UnityEngine.Tilemaps;
 
+[ExecuteInEditMode]
+[RequireComponent(typeof(MapSettings))]
 public class LevelGenerator : MonoBehaviour
 {
 
     public Tilemap tilemap;
+
     public TileBase tile;
-    public TileBase topTile;
 
-    public int width;
-    public int height;
-
-    public float seed = 1.212312f;
-
-    public int minWidth = 10;
 
     private int[,] map;
 
-    [ReorderableList]
-    public List<IMapFunction> mapFunctions;
-
+    private MapSettings mapSettings;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        ClearMap();
+        mapSettings = GetComponent<MapSettings>();
         GenerateMap();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            ClearMap();
-            GenerateMap();
-        }
-    }
-
-    [ExecuteInEditMode]
+    [Button("Generate map")]
     public void GenerateMap()
     {
         ClearMap();
-        int[,] map = new int[width, height];
-        float seed = Time.time;
-        map = MapFunctions.GenerateArray(width, height, true);
-        map = MapFunctions.RandomWalkTopSmoothed(map, seed, minWidth);
-        map = MapFunctions.AddGaps(map, seed, 4, 1, 0.6f);
-        Debug.Log(seed);
-        //Render the result
-        MapFunctions.RenderMap(map, tilemap, tile);
+        var map = mapSettings.GenerateArray();
+        mapSettings.ApplySettings(ref map);
+        RenderMap(map, tilemap, tile);
     }
 
     public void ClearMap()
     {
         tilemap.ClearAllTiles();
     }
+
+
+    /// <summary>
+    /// Draws the map to the screen
+    /// </summary>
+    /// <param name="map">Map that we want to draw</param>
+    /// <param name="tilemap">Tilemap we will draw onto</param>
+    /// <param name="tile">Tile we will draw with</param>
+    public void RenderMap(int[,] map, Tilemap tilemap, TileBase tile)
+    {
+        tilemap.ClearAllTiles(); //Clear the map (ensures we dont overlap)
+        for (int x = 0; x < map.GetUpperBound(0); x++) //Loop through the width of the map
+        {
+            for (int y = 0; y < map.GetUpperBound(1); y++) //Loop through the height of the map
+            {
+                if (map[x, y] == 1) // 1 = tile, 0 = no tile
+                {
+                    tilemap.SetTile(new Vector3Int(x, y, 0), tile);
+                }
+            }
+        }
+    }
+
 }
