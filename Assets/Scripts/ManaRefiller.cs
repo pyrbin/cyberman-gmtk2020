@@ -41,7 +41,7 @@ public class ManaRefiller : MonoBehaviour
     {
         
     }
-    void removeMana(int amount){
+    public void removeMana(int amount){
         if (amount > currentMana)
             return;
         for (int i = FilledManaUnitList.Count-1; i >= 0; i--)
@@ -54,7 +54,7 @@ public class ManaRefiller : MonoBehaviour
         }
         currentMana -= amount;
     }
-    void addMana(int amount){
+    public void addMana(int amount){
         foreach (ManaUnitScript manaPip in EmptyManaUnitList)
         {
             manaPip.isFilled = true;
