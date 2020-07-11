@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2811163d9e9db4a4fbc5422f1b8a5a18, type: 3}
+  m_Name: CARD_ShortSlide
+  m_EditorClassIdentifier: 
+  Title: Short Slide
+  Description: 
+  Cost: 0
+  Rarity: 1
+  Background: {fileID: 21300000, guid: 640b31ed4bdacc44181311df0816122c, type: 3}
+  Duration: 1
+  Hover: 0
