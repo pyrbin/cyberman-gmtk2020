@@ -24,16 +24,26 @@ public class Player : MonoBehaviour
         set { innerHealth = math.min(value, MaxHealth); }
     }
 
+    public int MaxMana = 10;
+
+    public int Mana
+    {
+        get { return innerMana; }
+        set { innerMana = math.min(value, MaxMana); }
+    }
+
     public GunFire GunHolder;
 
     public bool ShowEvents;
 
     [ShowIf("ShowEvents")]
     public OnHealthChange OnHealthChangeEvent;
+
     [ShowIf("ShowEvents")]
     public OnDeath OnDeathEvent;
 
     private int innerHealth;
+    private int innerMana;
 
     #region API
 
@@ -43,6 +53,13 @@ public class Player : MonoBehaviour
     public void Boost(float dur, float mod = 1.5f) { StartCoroutine(BoostFor(dur, mod)); }
     public void PauseMovement(float dur) { StartCoroutine(DontMoveFor(dur)); }
     public void Shoot() { GunHolder.GetComponent<Animation>().Play("gun_fire"); }
+
+    public bool PlayCard(Card card) 
+    {
+        if(card.Cost > Mana) return false;
+        card.OnUse(this);
+        return true;
+    }
 
     public void Damage(ushort val)
     {
