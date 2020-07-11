@@ -14,8 +14,6 @@ public class MapSettings : MonoBehaviour
 
     public int height;
 
-    public int chunkSize;
-
     [ReorderableList]
     public List<MapFunction> mapFunctions;
 

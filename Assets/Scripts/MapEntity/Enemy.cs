@@ -40,7 +40,7 @@ public class Enemy : MapEntity
     {
         if (!GetPlayer(other.gameObject, out var player)) return;
 
-        if (math.abs(other.relativeVelocity.y) > 0)
+        if ((other.relativeVelocity.y) < -1f)
         {
             Damage(MaxHealth);
             player

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Jump
   Description: 
-  Cost: 4
+  Cost: 2
   Rarity: 1
   Background: {fileID: -4143278121117960503, guid: 655518ff5ed8ad14683b2166fdc2e705,
     type: 3}
-  JumpMod: 2
+  JumpMod: 1

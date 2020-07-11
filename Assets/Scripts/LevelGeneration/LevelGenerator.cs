@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
+using Unity.Mathematics;
 using UnityEngine;
 
 using UnityEngine.Tilemaps;
@@ -11,7 +12,7 @@ public class LevelGenerator : MonoBehaviour
 {
 
     public Tilemap tilemap;
-    public TileBase tile;
+    public Tile tile;
 
     [MinMaxSlider(-100, 100)]
     public Vector2 renderRange;
@@ -52,6 +53,7 @@ public class LevelGenerator : MonoBehaviour
         ClearMap();
         map = mapSettings.GenerateArray();
         mapSettings.ApplySettings(ref map);
+        tilemap.transform.localPosition = new float3(0f, -mapSettings.height, 0f);
         generatedMap = true;
     }
 
