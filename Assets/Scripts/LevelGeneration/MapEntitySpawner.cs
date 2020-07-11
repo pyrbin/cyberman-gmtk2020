@@ -9,10 +9,8 @@ public class MapEntitySpawner : MonoBehaviour
     public Transform obstacleHolder;
     public float chanceOfObstacle;
 
-    [MinMaxSlider(0, 10)]
-    public Vector2 spawnDistanceFromGround;
 
-    public List<GameObject> mapEntities;
+    public List<MapEntity> mapEntities;
 
     [Range(0, 100)]
     public int spawnRange;
@@ -38,13 +36,13 @@ public class MapEntitySpawner : MonoBehaviour
                 Vector2Int? topTilePos = getTopTile(xSpawnPos, tilemap, map);
                 if (topTilePos != null)
                 {
-                    int start = Mathf.FloorToInt(spawnDistanceFromGround.x);
-                    int end = Mathf.FloorToInt(spawnDistanceFromGround.y);
+                    int start = Mathf.FloorToInt(mapEntity.Config.SpawnHeight.x);
+                    int end = Mathf.FloorToInt(mapEntity.Config.SpawnHeight.y);
                     int spawnPoint = Random.Range(start, end);
 
                     Grid layout = tilemap.layoutGrid;
                     // Spawn any object
-                    GameObject tmp = Instantiate(mapEntity, obstacleHolder);
+                    GameObject tmp = Instantiate(mapEntity.gameObject, obstacleHolder);
                     tmp.transform.position = layout.CellToWorld(new Vector3Int(topTilePos.Value.x, topTilePos.Value.y + 1 + spawnPoint, 0));
                     spawnedDic.Add(xSpawnPos, true);
                 }
