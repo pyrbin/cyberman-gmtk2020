@@ -12,6 +12,7 @@ public class CharacterController : MonoBehaviour
 
     public float? SpeedMod { get; set; } = null;
     public bool IsSliding { get; private set; }
+    public bool DontMove { get; set; } = false;
 
     private Rigidbody2D rbody;
     private Collider2D coll;
@@ -58,6 +59,7 @@ public class CharacterController : MonoBehaviour
     void FixedUpdate()
     {
         // Set sideways velocity.
-        rbody.velocity = new float2(Speed * SpeedMod ?? 1f, rbody.velocity.y);
+        if (!DontMove)
+            rbody.velocity = new float2(Speed * (SpeedMod ?? 1f), rbody.velocity.y);
     }
 }
