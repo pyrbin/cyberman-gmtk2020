@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using NaughtyAttributes;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioPlayer : MonoBehaviour
@@ -7,11 +8,11 @@ public class AudioPlayer : MonoBehaviour
     private bool randomPitch = false;
 
     [SerializeField]
-    [ConditionalHide("randomPitch", false)]
+    [ShowIf("randomPitch")]
     private float minPitchRange;
 
     [SerializeField]
-    [ConditionalHide("randomPitch", false)]
+    [ShowIf("randomPitch")]
     private float maxPitchRange;
 
     private AudioSource audioSource;
