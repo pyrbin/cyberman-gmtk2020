@@ -17,10 +17,10 @@ public class CharacterController : MonoBehaviour
     private Rigidbody2D rbody;
     private Collider2D coll;
 
-
     public void Jump(float mod = 1f)
     {
-        if (!IsGrounded) return;
+        //print(IsGrounded);
+        //if (!IsGrounded) return;
         rbody.AddForce(Vector2.up * JumpImpulse * mod, ForceMode2D.Impulse);
     }
 

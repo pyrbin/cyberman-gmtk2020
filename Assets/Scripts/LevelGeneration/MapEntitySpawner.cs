@@ -24,30 +24,31 @@ public class MapEntitySpawner : MonoBehaviour
     {
         int xSpawnPos = xPlayerPos + spawnRange;
 
-        foreach (var mapEntity in mapEntities)
+        if (spawnedDic.TryGetValue(xSpawnPos, out var _))
+            return;
+
+        var entt = PickRandom();
+        float r = Random.Range(0f, 1f);
+        if (r < chanceOfObstacle)
         {
-            bool ignoreMe;
-            if (spawnedDic.TryGetValue(xSpawnPos, out ignoreMe))
-                return;
-
-            float r = Random.Range(0f, 1f);
-            if (r < chanceOfObstacle)
+            Vector2Int? topTilePos = getTopTile(xSpawnPos, tilemap, map);
+            if (topTilePos != null)
             {
-                Vector2Int? topTilePos = getTopTile(xSpawnPos, tilemap, map);
-                if (topTilePos != null)
-                {
-                    int start = Mathf.FloorToInt(mapEntity.Config.SpawnHeight.x);
-                    int end = Mathf.FloorToInt(mapEntity.Config.SpawnHeight.y);
-                    int spawnPoint = Random.Range(start, end);
+                int start = Mathf.FloorToInt(entt.Config.SpawnHeight.x);
+                int end = Mathf.FloorToInt(entt.Config.SpawnHeight.y);
 
-                    Grid layout = tilemap.layoutGrid;
-                    // Spawn any object
-                    GameObject tmp = Instantiate(mapEntity.gameObject, obstacleHolder);
-                    tmp.transform.position = layout.CellToWorld(new Vector3Int(topTilePos.Value.x, topTilePos.Value.y + 1 + spawnPoint, 0));
-                    spawnedDic.Add(xSpawnPos, true);
-                }
+                int spawnPoint = Random.Range(start, end);
+
+                Grid layout = tilemap.layoutGrid;
+                // Spawn any object
+                var tmp = Instantiate(entt.gameObject, obstacleHolder);
+                tmp.transform.localPosition = layout.CellToWorld(new Vector3Int(topTilePos.Value.x, topTilePos.Value.y + 1 + spawnPoint, 0));
+                tmp.GetComponent<MapEntity>().OnSpawn(GetComponent<LevelGenerator>());
+
             }
         }
+
+        spawnedDic.Add(xSpawnPos, true);
     }
 
     public void DespawnObstacles(int xPlayerPos)
@@ -57,6 +58,11 @@ public class MapEntitySpawner : MonoBehaviour
             if (child.transform.position.x < allowedRange)
                 Object.DestroyImmediate(child.gameObject);
 
+    }
+
+    public MapEntity PickRandom()
+    {
+        return mapEntities[UnityEngine.Random.Range(0, mapEntities.Count)];
     }
 
     private Vector2Int? getTopTile(int x, Tilemap tilemap, int[,] map)

@@ -26,10 +26,7 @@ public abstract class MapEntity : MonoBehaviour
         Collider = GetComponent<Collider2D>();
     }
 
-    void OnSpawn(LevelGenerator generator)
-    {
-
-    }
+    public virtual void OnSpawn(LevelGenerator generator) { }
 
     protected bool GetPlayer(GameObject go, out Player player)
     {
