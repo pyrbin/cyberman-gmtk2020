@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 [ExecuteInEditMode]
-[RequireComponent(typeof(MapSettings), typeof(ObstacleSettings))]
+[RequireComponent(typeof(MapSettings), typeof(MapEntitySpawner))]
 public class LevelGenerator : MonoBehaviour
 {
 
@@ -18,12 +18,6 @@ public class LevelGenerator : MonoBehaviour
 
     public bool renderAll = false;
 
-    [Range(0, 100)]
-    public int spawnRange;
-
-    [Range(0, 100)]
-    public int despawnRange;
-
     [ShowAssetPreview(64, 64)]
     public Transform player;
 
@@ -31,7 +25,7 @@ public class LevelGenerator : MonoBehaviour
     public MapSettings mapSettings;
 
     [SerializeField]
-    public ObstacleSettings obstacleSettings;
+    public MapEntitySpawner mapEntitySpawner;
 
     private bool generatedMap = false;
 
@@ -53,8 +47,8 @@ public class LevelGenerator : MonoBehaviour
         if (generatedMap && map != null && tilemap != null)
         {
             RenderMap(map, tilemap, tile);
-            obstacleSettings.SpawnObstacles(Mathf.FloorToInt(player.position.x) + spawnRange, tilemap, map);
-            obstacleSettings.DespawnObstacles();
+            mapEntitySpawner.SpawnObstacles(Mathf.FloorToInt(player.position.x), tilemap, map);
+            mapEntitySpawner.DespawnObstacles(Mathf.FloorToInt(player.position.x));
         }
     }
 
