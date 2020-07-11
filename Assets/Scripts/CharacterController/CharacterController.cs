@@ -56,6 +56,7 @@ public class CharacterController : MonoBehaviour
         coll = GetComponentInChildren<Collider2D>();
     }
 
+
     void FixedUpdate()
     {
         // Set sideways velocity.

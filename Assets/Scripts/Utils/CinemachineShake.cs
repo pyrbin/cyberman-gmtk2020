@@ -4,6 +4,7 @@ using UnityEngine;
 using Cinemachine;
 using Unity.Mathematics;
 
+[RequireComponent(typeof(CinemachineVirtualCamera))]
 public class CinemachineShake : MonoBehaviour
 {
     public static CinemachineShake Instance { get; private set; }
