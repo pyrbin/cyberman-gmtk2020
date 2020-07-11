@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
 
     #endregion
 
+    [ShowNativeProperty]
+    public Vector2 Velocity => GetComponent<Rigidbody2D>().velocity;
+
     void Awake()
     {
         if (Instance == null)

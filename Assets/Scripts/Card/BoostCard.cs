@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-[CreateAssetMenuAttribute(fileName = "SlideCard", menuName = "Card/BoostCard")]
+[CreateAssetMenuAttribute(fileName = "SlideCard", menuName = "Card/Boost Card")]
 public class BoostCard : Card
 {
     public float SpeedMod = 2f;

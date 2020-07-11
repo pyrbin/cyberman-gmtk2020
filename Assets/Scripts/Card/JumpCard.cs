@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenuAttribute(fileName = "JumpCard", menuName = "Card/JumpCard")]
+[CreateAssetMenuAttribute(fileName = "JumpCard", menuName = "Card/Jump Card")]
 public class JumpCard : Card
 {
     public float JumpMod = 1f;

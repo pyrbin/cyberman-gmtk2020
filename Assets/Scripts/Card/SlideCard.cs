@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-[CreateAssetMenuAttribute(fileName = "SlideCard", menuName = "Card/SlideCard")]
+[CreateAssetMenuAttribute(fileName = "SlideCard", menuName = "Card/Slide Card")]
 public class SlideCard : Card
 {
 
