@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 [ExecuteInEditMode]
-[RequireComponent(typeof(MapSettings))]
+[RequireComponent(typeof(MapSettings), typeof(ObstacleSettings))]
 public class LevelGenerator : MonoBehaviour
 {
 
@@ -18,23 +18,46 @@ public class LevelGenerator : MonoBehaviour
 
     public bool renderAll = false;
 
+    [Range(0, 100)]
+    public int spawnRange;
+
+    [Range(0, 100)]
+    public int despawnRange;
+
+    [ShowAssetPreview(64, 64)]
     public Transform player;
+
+    [SerializeField]
+    public MapSettings mapSettings;
+
+    [SerializeField]
+    public ObstacleSettings obstacleSettings;
+
+    private bool generatedMap = false;
 
     private int[,] map;
 
-    private MapSettings mapSettings;
+
 
 
     void Awake()
     {
-        mapSettings = GetComponent<MapSettings>();
+        // mapSettings = GetComponent<MapSettings>();
+        // obstacleSettings = GetComponent<ObstacleSettings>();
         GenerateMap();
     }
 
     void Update()
     {
-        RenderMap(map, tilemap, tile);
+
+        if (generatedMap && map != null && tilemap != null)
+        {
+            RenderMap(map, tilemap, tile);
+            obstacleSettings.SpawnObstacles(Mathf.FloorToInt(player.position.x) + spawnRange, tilemap, map);
+            obstacleSettings.DespawnObstacles();
+        }
     }
+
 
     [Button("Generate map")]
     public void GenerateMap()
@@ -42,11 +65,13 @@ public class LevelGenerator : MonoBehaviour
         ClearMap();
         map = mapSettings.GenerateArray();
         mapSettings.ApplySettings(ref map);
+        generatedMap = true;
     }
 
     public void ClearMap()
     {
         tilemap.ClearAllTiles();
+        generatedMap = false;
     }
 
 
@@ -92,6 +117,36 @@ public class LevelGenerator : MonoBehaviour
             }
         }
     }
+
+
+
+
+
+    /*
+        public void Apply(ref int[,] map, float seed)
+        {
+            for (int x = 0; x < map.GetUpperBound(0); x++)
+            {
+                Vector2Int? topTile = getTopTile(x);
+                if (topTile != null)
+                {
+                    float r = Random.Range(0f, 1f);
+                    if (r < chanceOfObstacle)
+                    {
+                        int start = Mathf.FloorToInt(spawnDistanceFromGround.x);
+                        int end = Mathf.FloorToInt(spawnDistanceFromGround.y);
+                        int spawnPoint = Random.Range(start, end);
+
+                        // Spawn any object
+                        GameObject tmp = Instantiate(Object);
+                        tmp.transform.position = new Vector3(topTile.Value.x, topTile.Value.y + spawnPoint, 0.0f);
+                        //map[topTile.Value.x, topTile.Value.y + spawnPoint] = 1;
+                    }
+                }
+            }
+        }*/
+
+
 
 
 }
