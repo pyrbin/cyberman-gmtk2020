@@ -47,5 +47,11 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
+  },
+  "lock": {
+    "com.dbrizov.naughtyattributes": {
+      "revision": "upm",
+      "hash": "8361c4c50a4f375cfac3cdb67ebd3babf15c42d8"
+    }
   }
 }
