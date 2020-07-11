@@ -5,7 +5,7 @@ using UnityEngine;
 
 using UnityEngine.Tilemaps;
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 [RequireComponent(typeof(MapSettings), typeof(MapEntitySpawner))]
 public class LevelGenerator : MonoBehaviour
 {
@@ -18,13 +18,10 @@ public class LevelGenerator : MonoBehaviour
 
     public bool renderAll = false;
 
-    [ShowAssetPreview(64, 64)]
     public Transform player;
 
-    [SerializeField]
     public MapSettings mapSettings;
 
-    [SerializeField]
     public MapEntitySpawner mapEntitySpawner;
 
     private bool generatedMap = false;
@@ -32,12 +29,8 @@ public class LevelGenerator : MonoBehaviour
     private int[,] map;
 
 
-
-
     void Awake()
     {
-        // mapSettings = GetComponent<MapSettings>();
-        // obstacleSettings = GetComponent<ObstacleSettings>();
         GenerateMap();
     }
 
