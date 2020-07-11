@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     }
 
     public GunFire GunHolder;
+    public Transform Wheel;
 
     public bool ShowEvents;
 

@@ -18,12 +18,16 @@ public class Bullet : MonoBehaviour
     {
         DamageFunc(other.gameObject);
         GetComponent<Collider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+        Destroy(this);
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
         DamageFunc(other.gameObject);
         GetComponent<Collider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+        Destroy(this);
     }
 
     void DamageFunc(GameObject other)
