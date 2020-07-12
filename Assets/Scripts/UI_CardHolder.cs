@@ -30,18 +30,39 @@ public class UI_CardHolder : MonoBehaviour, IPointerClickHandler
         SyncCardView();
     }
 
+    public Color RarityColor(Card card)
+    {
+        switch (Card?.Rarity)
+        {
+            case Rarity.Common:
+                return new Color(0.9f, 0.8f, 0.7f);
+            case Rarity.Epic:
+                return new Color(0f, 0.44f, 0.84f);
+            case Rarity.Rare:
+                return new Color(0.64f, 0.21f, 0.93f);
+            case Rarity.Legendary:
+                return new Color(1.00f, 0.50f, 0f);
+        }
+        return Color.white;
+    }
+
     public void SyncCardView()
     {
-        if(Card != null) {
+        if (Card != null)
+        {
             Background.sprite = Card.Background;
             Cost.transform.parent.gameObject.SetActive(true);
             Title.text = Card.Title;
             Cost.text = Convert.ToString(Card.Cost);
-        } else {
+            Title.transform.parent.GetComponent<Image>().color = RarityColor(Card);
+        }
+        else
+        {
             Background.sprite = null;
             Title.text = "";
             Cost.text = "";
             Cost.transform.parent.gameObject.SetActive(false);
+            Title.transform.parent.GetComponent<Image>().color = Color.white;
         }
     }
 
@@ -64,7 +85,7 @@ public class UI_CardHolder : MonoBehaviour, IPointerClickHandler
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void OnPointerClick(PointerEventData eventData)

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Boost
   Description: 
-  Cost: 0
+  Cost: 2
   Rarity: 1
   Background: {fileID: 21300000, guid: 640b31ed4bdacc44181311df0816122c, type: 3}
   SpeedMod: 2

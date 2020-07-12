@@ -14,7 +14,7 @@ public class HandRefiller : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        for(int i = 0; i < CardHolderList.Count; i++)
+        for (int i = 0; i < CardHolderList.Count; i++)
         {
             DrawCard(i);
             CardHolderList[i].Id = (ushort)i;
@@ -25,7 +25,7 @@ public class HandRefiller : MonoBehaviour
     [Button("Update Cards")]
     void UpdateCardViews()
     {
-        foreach(Transform cardHolder in this.gameObject.transform)
+        foreach (Transform cardHolder in this.gameObject.transform)
         {
             cardHolder.GetComponent<UI_CardHolder>().SyncCardView();
         }
@@ -34,27 +34,27 @@ public class HandRefiller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        #if UNITY_EDITOR
-            UpdateCardViews();
-        #endif
+#if UNITY_EDITOR
+        UpdateCardViews();
+#endif
 
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
             PlayCard(0);
 
-        else if(Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
             PlayCard(1);
 
-        else if(Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
             PlayCard(2);
 
-        else if(Input.GetKeyDown(KeyCode.Alpha4))
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
             PlayCard(3);
 
     }
     public void DrawCard(int cardPos)
     {
         var holder = CardHolderList[cardPos];
-        var card = Deck[UnityEngine.Random.Range(0, Deck.Count-1)];
+        var card = Deck[UnityEngine.Random.Range(0, Deck.Count - 1)];
         holder.SetCard(card);
         holder.gameObject.SetActive(true);
     }

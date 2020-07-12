@@ -9,21 +9,29 @@ public class ManaRefiller : MonoBehaviour
     [Range(0, 10)]
     public int Mana = 10;
 
-    void Update() {
-        if (Player.Instance != null && Mana != Player.Instance.Mana) {
+    void Awake()
+    {
+        UpdateMana();
+    }
+
+    void Update()
+    {
+        if (Player.Instance != null && Mana != Player.Instance.Mana)
+        {
             Mana = Player.Instance.Mana;
             UpdateMana();
         }
     }
 
     [Button("UpdateMana")]
-    public void UpdateMana() {
+    public void UpdateMana()
+    {
         int i = 0;
-        foreach(var mana in GetComponentsInChildren<ManaUnitScript>())
+        foreach (var mana in GetComponentsInChildren<ManaUnitScript>())
         {
             mana.SetManaStatus(i < Mana);
             i++;
         }
     }
-    
+
 }
