@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
@@ -13,6 +14,7 @@ public class LevelGenerator : MonoBehaviour
 
     public Tilemap tilemap;
     public Tile tile;
+    public Tile topTile;
 
     [MinMaxSlider(-100, 100)]
     public Vector2 renderRange;
@@ -28,6 +30,8 @@ public class LevelGenerator : MonoBehaviour
     private bool generatedMap = false;
 
     private int[,] map;
+
+    public Transform winItem;
 
 
     void Awake()
@@ -54,7 +58,24 @@ public class LevelGenerator : MonoBehaviour
         map = mapSettings.GenerateArray();
         mapSettings.ApplySettings(ref map);
         tilemap.transform.localPosition = new float3(0f, -mapSettings.height, 0f);
+        SpawnWinItem();
         generatedMap = true;
+    }
+
+
+    public void SpawnWinItem()
+    {
+        for (int x = map.GetUpperBound(0); x >= 0; x--)
+        {
+            for (int y = map.GetUpperBound(1); y >= 0; y--)
+            {
+                if (map[x, y] == 1)
+                {
+                    winItem.transform.localPosition = new float3(x, y, 0f);
+                    return;
+                }
+            }
+        }
     }
 
     public void ClearMap()
@@ -95,15 +116,26 @@ public class LevelGenerator : MonoBehaviour
                 endRender = map.GetUpperBound(0);
         }
 
+
         for (int x = startRender; x < endRender; x++) //Loop through the width of the map
         {
-            for (int y = 0; y < map.GetUpperBound(1); y++) //Loop through the height of the map
+            bool topLayer = true;
+            for (int y = map.GetUpperBound(1); y >= 0; y--) //Loop through the height of the map
             {
                 if (map[x, y] == 1) // 1 = tile, 0 = no tile
                 {
-                    tilemap.SetTile(new Vector3Int(x, y, 0), tile);
+                    if (topLayer)
+                    {
+                        topLayer = false;
+                        tilemap.SetTile(new Vector3Int(x, y, 0), topTile);
+                    }
+                    else
+                    {
+                        tilemap.SetTile(new Vector3Int(x, y, 0), tile);
+                    }
                 }
             }
+            topLayer = false;
         }
     }
 
