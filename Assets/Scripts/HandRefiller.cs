@@ -62,6 +62,7 @@ public class HandRefiller : MonoBehaviour
     public void PlayCard(int cardPos)
     {
         var holder = CardHolderList[cardPos];
+        if (!Player.Instance.PlayCard(holder.Card)) return;
         holder.gameObject.SetActive(false);
         holder.SetEmpty();
         DrawCard(cardPos);

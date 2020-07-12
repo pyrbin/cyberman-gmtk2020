@@ -17,13 +17,13 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         DamageFunc(other.gameObject);
-        GetComponent<Collider2D>().enabled = false;
+        gameObject.SetActive(false);
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
         DamageFunc(other.gameObject);
-        GetComponent<Collider2D>().enabled = false;
+        gameObject.SetActive(false);
     }
 
     void DamageFunc(GameObject other)

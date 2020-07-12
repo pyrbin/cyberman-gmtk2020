@@ -10,12 +10,19 @@ public class CharacterController : MonoBehaviour
 
     public ContactFilter2D ContactFilter;
 
+    [SerializeField]
+    public Animator Animator = null;
+
+    [SerializeField]
+    public Transform Model = null;
+
     public float? SpeedMod { get; set; } = null;
     public bool IsSliding { get; private set; }
     public bool DontMove { get; set; } = false;
 
     private Rigidbody2D rbody;
     private Collider2D coll;
+    private int animatorSlidingBool;
 
     public void Jump(float mod = 1f)
     {
@@ -30,6 +37,7 @@ public class CharacterController : MonoBehaviour
         {
             coll.transform.localScale = new float3(1f, hover ? 0 : 0.5f, 1f);
             coll.transform.localPosition = new float3(0, hover ? 0 : -0.75f, 0f);
+            Model.transform.localPosition = new float3(0, hover ? 0.5f : -0.5f, 0f);
             if (hover)
             {
                 rbody.velocity = new float2(rbody.velocity.x, 0f);
@@ -40,10 +48,12 @@ public class CharacterController : MonoBehaviour
         {
             coll.transform.localScale = new float3(1f);
             coll.transform.localPosition = new float3(0f);
+            Model.transform.localPosition = new float3(0, -0.5f, 0f);
             GetComponent<DynamicGravity>().OverrideGravity = null;
         }
 
         IsSliding = !IsSliding;
+        Animator.SetBool(animatorSlidingBool, IsSliding);
     }
 
     // We can check to see if there are any contacts given our contact filter
@@ -54,6 +64,7 @@ public class CharacterController : MonoBehaviour
     {
         rbody = GetComponent<Rigidbody2D>();
         coll = GetComponentInChildren<Collider2D>();
+        animatorSlidingBool = Animator.StringToHash("IsSliding");
     }
 
 
