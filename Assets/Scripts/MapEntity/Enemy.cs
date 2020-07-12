@@ -40,19 +40,24 @@ public class Enemy : MapEntity
     {
         if (!GetPlayer(other.gameObject, out var player)) return;
 
-        if ((other.relativeVelocity.y) < -1f)
+        foreach (var cnt in other.contacts)
         {
-            Damage(MaxHealth);
-            player
-                .GetComponent<Rigidbody2D>()
-                .AddForce(new float2(0f, player.GetComponent<CharacterController>().JumpImpulse), ForceMode2D.Impulse);
+            if (cnt.normal.y == -1f)
+            {
+                Damage(MaxHealth);
+                player
+                    .GetComponent<Rigidbody2D>()
+                    .AddForce(new float2(0f, player.GetComponent<CharacterController>().JumpImpulse), ForceMode2D.Impulse);
+                return;
+            }
         }
-        else
-        {
-            player.PauseMovement(0.33f);
-            player
-                .GetComponent<Rigidbody2D>()
-                .AddForce(new float2(-2f, 0f), ForceMode2D.Impulse);
-        }
+
+        player.PauseMovement(0.33f);
+        player
+            .GetComponent<Rigidbody2D>()
+            .AddForce(new float2(-2f, 0f), ForceMode2D.Impulse);
+
+        Damage(MaxHealth);
+
     }
 }

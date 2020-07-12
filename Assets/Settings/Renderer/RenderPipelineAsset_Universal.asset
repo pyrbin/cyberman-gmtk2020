@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf2edee5c58d82540a51f03df9d42094, type: 3}
-  m_Name: RendererPipeline_2D
+  m_Name: RenderPipelineAsset_Universal
   m_EditorClassIdentifier: 
   k_AssetVersion: 5
   k_AssetPreviousVersion: 5
-  m_RendererType: 1
+  m_RendererType: 0
   m_RendererData: {fileID: 0}
   m_RendererDataList:
-  - {fileID: 11400000, guid: c03f5fb0c08ba3645bda14552915c357, type: 2}
+  - {fileID: 11400000, guid: 778fa29fc3929f24184f727aebf9b5e4, type: 2}
   m_DefaultRendererIndex: 0
   m_RequireDepthTexture: 0
   m_RequireOpaqueTexture: 0
   m_OpaqueDownsampling: 1
   m_SupportsTerrainHoles: 1
   m_SupportsHDR: 1
-  m_MSAA: 8
+  m_MSAA: 1
   m_RenderScale: 1
   m_MainLightRenderingMode: 1
   m_MainLightShadowsSupported: 1
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_ShadowNormalBias: 1
   m_SoftShadowsSupported: 0
   m_UseSRPBatcher: 1
-  m_SupportsDynamicBatching: 0
+  m_SupportsDynamicBatching: 1
   m_MixedLightingSupported: 1
   m_DebugLevel: 0
   m_ColorGradingMode: 0

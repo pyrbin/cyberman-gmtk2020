@@ -18,35 +18,39 @@ MonoBehaviour:
   m_TransparencySortAxis: {x: 0, y: 1, z: 0}
   m_HDREmulationScale: 1
   m_LightBlendStyles:
-  - name: Default
+  - enabled: 1
+    name: Default
+    maskTextureChannel: 0
+    renderTextureScale: 0.5
+    blendMode: 1
+    customBlendFactors:
+      multiplicative: 0
+      additive: 0
+  - enabled: 1
+    name: Direct Lighting
+    maskTextureChannel: 1
+    renderTextureScale: 0.5
+    blendMode: 1
+    customBlendFactors:
+      multiplicative: 0
+      additive: 0
+  - enabled: 0
+    name: Blend Style 2
     maskTextureChannel: 0
     renderTextureScale: 1
     blendMode: 1
     customBlendFactors:
       multiplicative: 0
       additive: 0
-  - name: Blend Style 1
+  - enabled: 0
+    name: Blend Style 3
     maskTextureChannel: 0
     renderTextureScale: 1
     blendMode: 1
     customBlendFactors:
       multiplicative: 0
       additive: 0
-  - name: Blend Style 2
-    maskTextureChannel: 0
-    renderTextureScale: 1
-    blendMode: 1
-    customBlendFactors:
-      multiplicative: 0
-      additive: 0
-  - name: Blend Style 3
-    maskTextureChannel: 0
-    renderTextureScale: 1
-    blendMode: 1
-    customBlendFactors:
-      multiplicative: 0
-      additive: 0
-  m_UseDepthStencilBuffer: 1
+  m_UseDepthStencilBuffer: 0
   m_DefaultMaterialType: 0
   m_DefaultCustomMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3,
     type: 2}
