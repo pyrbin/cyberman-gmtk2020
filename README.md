@@ -3,29 +3,8 @@
 ## cyberman
 
 **cyberman**
-GMTK 2020 GameJam
-<br>
 
-#### Table of Contents
+Made for: *GMTK 2020 GameJam*
 
-- [Introduction](#Introduction)
+Very bad don't look, but epic soundtracks/voiceovers B)
 
-## Introduction
-
-TODO
-
-## Developers
-
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top">
-        <a href="https://github.com/pyrbin">
-            <img width="100" height="100" src="https://github.com/pyrbin.png?s=100">
-            <br>
-            pyrbin
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
