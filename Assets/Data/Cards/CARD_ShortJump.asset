@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Short Jump
   Description: 
-  Cost: 1
+  Cost: 2
   Rarity: 8
   Background: {fileID: 21300000, guid: 640b31ed4bdacc44181311df0816122c, type: 3}
-  JumpMod: 1
+  JumpMod: 1.5

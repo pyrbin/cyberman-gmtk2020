@@ -8,10 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/Integration/Integration.unity
-    guid: 1103292e70e6ddb4b8d92a02d4390ce9
   - enabled: 1
-    path: Assets/Scenes/CharacterController/CharacterController.unity
-    guid: a5baabae69688ec449d157a68efb2aa3
+    path: Assets/Scenes/Menu/Menu.unity
+    guid: 2c97c54fbab4584449086608a4263fe0
+  - enabled: 1
+    path: Assets/Scenes/LevelGeneration/IntegrationLevels.unity
+    guid: 47d854bd5377ee4478add788c6935624
+  - enabled: 1
+    path: Assets/Scenes/Menu/Die.unity
+    guid: 5ceac49e53187e44da00829bc2feb6a3
+  - enabled: 1
+    path: Assets/Scenes/Menu/Win.unity
+    guid: a1ca69db9d5443e4fb1090c978ea3931
   m_configObjects: {}

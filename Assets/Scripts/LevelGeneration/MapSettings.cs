@@ -8,7 +8,7 @@ using System;
 
 public class MapSettings : MonoBehaviour
 {
-    public float seed;
+    private float seed = UnityEngine.Random.Range(0, 1337f);
 
     public int width;
 

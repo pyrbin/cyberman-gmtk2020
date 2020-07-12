@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Shoot
   Description: 
-  Cost: 1
+  Cost: 3
   Rarity: 1
   Background: {fileID: 3595054216150968268, guid: bc48d3448211ada4589890ed876a9373,
     type: 3}

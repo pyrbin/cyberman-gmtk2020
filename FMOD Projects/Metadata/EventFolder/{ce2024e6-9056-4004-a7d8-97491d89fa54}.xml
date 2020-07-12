@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="EventFolder" id="{ce2024e6-9056-4004-a7d8-97491d89fa54}">
+		<property name="name">
+			<value>LavaCaverns</value>
+		</property>
+		<relationship name="folder">
+			<destination>{07dc898d-4294-4775-ab87-27ac3ee7c097}</destination>
+		</relationship>
+	</object>
+</objects>

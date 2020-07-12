@@ -335,6 +335,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &7471754028568426223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,7 +424,7 @@ MonoBehaviour:
       y: 0
   Collider: {fileID: 0}
   Damage: 2
-  Dir: 1
+  DontDamageFromTop: 1
 --- !u!61 &7471754028886786670
 BoxCollider2D:
   m_ObjectHideFlags: 0
