@@ -1,34 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
-using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-[ExecuteInEditMode]
-public class ManaUnitScript : MonoBehaviour
+public class ManaUnitScript : MonoBehaviour, IPointerClickHandler
 {
-    public bool Filled;
-
-    [SerializeField]
-    public Sprite FilledBg;
-    
-    [SerializeField]
-    public Sprite EmptyBg;
-
+    public bool isFilled;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        SetManaStatus(Filled);
+        isFilled = true;
     }
 
-    [Button("Toggle Filled")]
-    public void SetFilled() => SetManaStatus(!Filled);
-
     // Update is called once per frame
-    public void SetManaStatus(bool status)
+    void Update()
     {
-        Filled = status;
-        GetComponent<Image>().sprite = status ? FilledBg : EmptyBg;
+        
     }
 }
