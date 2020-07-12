@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{bd1a2cb1-7c86-4dea-a1fa-c0d56265c3d0}">
+		<property name="assetPath">
+			<value>000zapsplat_brisbane_cbd_queen_street_mall_people_city_all_clock_tower_stikes_15_mins.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>129.20270833333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{cea0356b-1c23-4dfb-9afa-76f5e97595eb}</destination>
+		</relationship>
+	</object>
+</objects>

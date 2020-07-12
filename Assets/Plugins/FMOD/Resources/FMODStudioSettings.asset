@@ -15,8 +15,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../Fmod/test/test.fspro
-  sourceBankPath: ..\Fmod\test\Build
+  sourceProjectPath: FMOD Projects/Copy_FMOD_GameJam 2020 - Out of Control.fspro
+  sourceBankPath: FMOD Projects\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0

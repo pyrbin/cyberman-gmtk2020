@@ -8,6 +8,7 @@ public class AddGaps : MapFunction
     public int minWidth;
     public int maxWidth;
     public float chanceOfGap;
+    public int nonGapTilesInBegginning = 20;
 
     public override void Apply(ref int[,] map, float seed)
     {
@@ -16,12 +17,11 @@ public class AddGaps : MapFunction
         int sectionWidth = 0;
         int currentGapSize = 0;
 
-        int startSpawnGaps = 30;
 
-        if (startSpawnGaps > map.GetUpperBound(0))
+        if (nonGapTilesInBegginning > map.GetUpperBound(0))
             return;
 
-        for (int x = startSpawnGaps; x < map.GetUpperBound(0); x++)
+        for (int x = nonGapTilesInBegginning; x < map.GetUpperBound(0); x++)
         {
             sectionWidth++;
             if (sectionWidth >= minWidth || gap == null)

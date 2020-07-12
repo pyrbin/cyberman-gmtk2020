@@ -1,17 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &1820122735432889315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164964573197095831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0201cc0242062e348b7115dbaf7a5a0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1820122735514104197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24,18 +12,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0201cc0242062e348b7115dbaf7a5a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1820122737370782089
+--- !u!114 &1820122735432889315
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6065331069749299732}
+  m_GameObject: {fileID: 1164964573197095831}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0201cc0242062e348b7115dbaf7a5a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1395817876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2913518306897749498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Ambience/FrozenHimalayas/HimalayaAmbience
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &326048883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2913518307221393223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Ambience/LavaCaverns/AmbienceCavern
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &5895647373964640928
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,6 +103,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1820122737370782089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6065331069749299732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0201cc0242062e348b7115dbaf7a5a0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1472162262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7811579406478163065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Ambience/HighriseCity/CityAmbience
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &1820122735432889318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84,13 +153,13 @@ PrefabInstance:
     - target: {fileID: 1461504923935648040, guid: d673cdb0855de7349b1f50b55bc80c8f,
         type: 3}
       propertyPath: mapEntities.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1461504923935648040, guid: d673cdb0855de7349b1f50b55bc80c8f,
         type: 3}
       propertyPath: mapEntities.Array.data[2]
       value: 
-      objectReference: {fileID: 6688092894810878803, guid: cb88ebdc87631ed489e5ba9f2cca0edf,
+      objectReference: {fileID: 8536653698301452140, guid: 30289e2d09b7a3846bc9268e5ccb4fc8,
         type: 3}
     - target: {fileID: 1461504923935648040, guid: d673cdb0855de7349b1f50b55bc80c8f,
         type: 3}
@@ -103,10 +172,21 @@ PrefabInstance:
       propertyPath: chanceOfObstacle
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 1461504923935648040, guid: d673cdb0855de7349b1f50b55bc80c8f,
+        type: 3}
+      propertyPath: mapEntities.Array.data[1]
+      value: 
+      objectReference: {fileID: 1306315385510220610, guid: 633f466df84f4394e98cb25244e8f465,
+        type: 3}
+    - target: {fileID: 1461504923935648040, guid: d673cdb0855de7349b1f50b55bc80c8f,
+        type: 3}
+      propertyPath: spawnRange
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 3543412111724647961, guid: d673cdb0855de7349b1f50b55bc80c8f,
         type: 3}
       propertyPath: width
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3543412111724647962, guid: d673cdb0855de7349b1f50b55bc80c8f,
         type: 3}
@@ -207,6 +287,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d673cdb0855de7349b1f50b55bc80c8f, type: 3}
+--- !u!1 &2913518306897749498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3543412111724647964, guid: d673cdb0855de7349b1f50b55bc80c8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1820122735432889318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2913518306897749501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3543412111724647963, guid: d673cdb0855de7349b1f50b55bc80c8f,
@@ -226,6 +312,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2424778018741295821}
     m_Modifications:
+    - target: {fileID: 5786815044690339092, guid: 0017c2f21250d47429ac3c2489d1c104,
+        type: 3}
+      propertyPath: spawnRange
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8442580144407075360, guid: 0017c2f21250d47429ac3c2489d1c104,
         type: 3}
       propertyPath: m_Name
@@ -239,7 +330,7 @@ PrefabInstance:
     - target: {fileID: 8442580144407075365, guid: 0017c2f21250d47429ac3c2489d1c104,
         type: 3}
       propertyPath: width
-      value: 29
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8442580144407075366, guid: 0017c2f21250d47429ac3c2489d1c104,
         type: 3}
@@ -250,13 +341,13 @@ PrefabInstance:
         type: 3}
       propertyPath: topTile
       value: 
-      objectReference: {fileID: 11400000, guid: ee9480da388ad5241b3b4ed2c8031a4b,
+      objectReference: {fileID: 11400000, guid: b1dc07f82f8d4fc4484ab465ef8d3d75,
         type: 2}
     - target: {fileID: 8442580144407075366, guid: 0017c2f21250d47429ac3c2489d1c104,
         type: 3}
       propertyPath: tile
       value: 
-      objectReference: {fileID: 11400000, guid: da03a99c1c5940249bb98e687b884a56,
+      objectReference: {fileID: 11400000, guid: 4ece928cc4a3339499013493cdc7c153,
         type: 2}
     - target: {fileID: 8442580144407075367, guid: 0017c2f21250d47429ac3c2489d1c104,
         type: 3}
@@ -315,6 +406,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0017c2f21250d47429ac3c2489d1c104, type: 3}
+--- !u!1 &7811579406478163065 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8442580144407075360, guid: 0017c2f21250d47429ac3c2489d1c104,
+    type: 3}
+  m_PrefabInstance: {fileID: 1820122736266405465}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7811579406478163070 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8442580144407075367, guid: 0017c2f21250d47429ac3c2489d1c104,
@@ -356,10 +453,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4428943762701206069, guid: 4269dd9355385ee48b57f81a8eedc480,
         type: 3}
+    - target: {fileID: 1461504923935648040, guid: d673cdb0855de7349b1f50b55bc80c8f,
+        type: 3}
+      propertyPath: spawnRange
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 3543412111724647961, guid: d673cdb0855de7349b1f50b55bc80c8f,
         type: 3}
       propertyPath: width
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3543412111724647962, guid: d673cdb0855de7349b1f50b55bc80c8f,
         type: 3}
@@ -370,13 +472,13 @@ PrefabInstance:
         type: 3}
       propertyPath: topTile
       value: 
-      objectReference: {fileID: 11400000, guid: ee9480da388ad5241b3b4ed2c8031a4b,
+      objectReference: {fileID: 11400000, guid: 65620ee780b0623418b08da8f217575d,
         type: 2}
     - target: {fileID: 3543412111724647962, guid: d673cdb0855de7349b1f50b55bc80c8f,
         type: 3}
       propertyPath: tile
       value: 
-      objectReference: {fileID: 11400000, guid: da03a99c1c5940249bb98e687b884a56,
+      objectReference: {fileID: 11400000, guid: c34d2fc87e5ceb84a9c42559121b697f,
         type: 2}
     - target: {fileID: 3543412111724647963, guid: d673cdb0855de7349b1f50b55bc80c8f,
         type: 3}
@@ -445,6 +547,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d673cdb0855de7349b1f50b55bc80c8f, type: 3}
+--- !u!1 &2913518307221393223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3543412111724647964, guid: d673cdb0855de7349b1f50b55bc80c8f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1820122737237907803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2913518307221393216 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3543412111724647963, guid: d673cdb0855de7349b1f50b55bc80c8f,
