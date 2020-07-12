@@ -8,7 +8,6 @@ using System;
 
 public class MapSettings : MonoBehaviour
 {
-    private float seed = UnityEngine.Random.Range(0, 1337f);
 
     public int width;
 
@@ -16,6 +15,14 @@ public class MapSettings : MonoBehaviour
 
     [ReorderableList]
     public List<MapFunction> mapFunctions;
+
+    private float seed = 0f;
+
+    public void Awake()
+    {
+        seed = UnityEngine.Random.Range(0, 1f);
+
+    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void ApplySettings(ref int[,] map)
