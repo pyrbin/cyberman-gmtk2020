@@ -1,9 +1,0 @@
-{29957b6f-bb5a-4492-ab26-414b12599a14} bank:/Master
-{b1885bbb-ca21-08d0-2d6f-cbb5e3aa9c8c} bank:/Master.strings
-{98dc93d7-5e7a-4ea0-8e2b-d3dd1f823125} bus:/
-{86eafb2f-9b0b-4da3-a150-3e6b6998339f} bus:/Reverb
-{f382e310-e4c1-4569-bf3a-b92678f8b54b} event:/Ambience/FrozenHimalayas/HimalayaAmbience
-{f32d8886-70a0-431c-9ac8-ee8bf309795f} event:/Ambience/HighriseCity/CityAmbience
-{64a6590f-4f61-48c6-97b8-648756149f57} event:/Ambience/LavaCaverns/AmbienceCavern
-{c3ebb481-2401-4e06-81f2-2e29a5ade192} event:/Character/Footsteps/PlayerFootsteps
-{16d35eed-1a50-4104-b93d-9dcfcec012bd} parameter:/Material

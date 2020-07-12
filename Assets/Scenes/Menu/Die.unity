@@ -566,7 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: 
+  Event: event:/Music/Youlost
   PlayEvent: 1
   StopEvent: 2
   AllowFadeout: 1
@@ -574,8 +574,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &745953612
 GameObject:
   m_ObjectHideFlags: 0

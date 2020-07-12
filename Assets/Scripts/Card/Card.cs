@@ -1,3 +1,4 @@
+using FMODUnity;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -22,7 +23,11 @@ public abstract class Card : ScriptableObject
     [BoxGroup("Visuals")]
     [ShowAssetPreview]
     public Sprite Background;
+
+    [EventRef]
     public string SFX_Path = "Unknown";
+    [Range(0, 4)]
+    public int SFX_Parameter = 0;
 
 
     public abstract void OnUse(Player player);

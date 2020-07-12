@@ -13,7 +13,7 @@ public class DamageArea : MapEntity
 {
     [Range(1, 3)]
     public ushort Damage;
-
+    public string OnHitSFX = "";
     public bool DontDamageFromTop = false;
 
     void OnTriggerEnter2D(Collider2D other)
@@ -40,6 +40,7 @@ public class DamageArea : MapEntity
     void DamageFunc(GameObject other)
     {
         if (!GetPlayer(other, out var player)) return;
+        if (OnHitSFX != "") FMODUnity.RuntimeManager.PlayOneShot("event:/" + OnHitSFX);
         player.Damage(Damage);
     }
 }

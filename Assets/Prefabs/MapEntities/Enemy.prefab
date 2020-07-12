@@ -405,6 +405,7 @@ MonoBehaviour:
       x: 0
       y: 0
   Collider: {fileID: 0}
+  DeathSound: event:/Character/Weapon/Shot
   MaxHealth: 1
 --- !u!114 &7471754028886786669
 MonoBehaviour:
@@ -424,6 +425,7 @@ MonoBehaviour:
       y: 0
   Collider: {fileID: 0}
   Damage: 2
+  OnHitSFX: 
   DontDamageFromTop: 1
 --- !u!61 &7471754028886786670
 BoxCollider2D:
@@ -438,7 +440,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.04694569, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -449,7 +451,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.7353971, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &7471754028886786671
 SpriteRenderer:

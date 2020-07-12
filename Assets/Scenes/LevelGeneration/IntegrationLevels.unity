@@ -123,6 +123,58 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1738562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7811579406478163065, guid: d641abcd13d0120418b626e5fd7d55bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 517974328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1738563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Music/city
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &1738567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Narrator/Level#1
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &87270882
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,7 +694,7 @@ PrefabInstance:
     - target: {fileID: 2913518306897749503, guid: d641abcd13d0120418b626e5fd7d55bc,
         type: 3}
       propertyPath: width
-      value: 300
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2913518306897749503, guid: d641abcd13d0120418b626e5fd7d55bc,
         type: 3}
@@ -679,7 +731,7 @@ PrefabInstance:
     - target: {fileID: 2913518307221393218, guid: d641abcd13d0120418b626e5fd7d55bc,
         type: 3}
       propertyPath: width
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2913518307221393218, guid: d641abcd13d0120418b626e5fd7d55bc,
         type: 3}
@@ -714,7 +766,7 @@ PrefabInstance:
     - target: {fileID: 7811579406478163068, guid: d641abcd13d0120418b626e5fd7d55bc,
         type: 3}
       propertyPath: width
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7811579406478163068, guid: d641abcd13d0120418b626e5fd7d55bc,
         type: 3}
@@ -754,7 +806,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 517974328}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 611538641}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d71c3acf08b06b46a2c3eae0ab4c678, type: 3}
@@ -772,7 +824,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 517974328}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 644009585}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d71c3acf08b06b46a2c3eae0ab4c678, type: 3}
@@ -784,12 +836,116 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 517974328}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1738562}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d71c3acf08b06b46a2c3eae0ab4c678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &611538641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2913518306897749498, guid: d641abcd13d0120418b626e5fd7d55bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 517974328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &611538645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611538641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Music/ice
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &611538646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611538641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Narrator/Level#3
+  PlayEvent: 1
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!1 &644009585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2913518307221393223, guid: d641abcd13d0120418b626e5fd7d55bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 517974328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &644009587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644009585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Music/lava
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &644009590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644009585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Narrator/Level#2
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &681626392 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3077369021770750874, guid: c3feb8b5b1145094695187f4de04bcc5,
@@ -809,35 +965,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IndexSceneToLoad: 3
---- !u!1 &798605193 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4209179827361883740, guid: e0bbf157eceb5de40897982c6d39dbe0,
-    type: 3}
-  m_PrefabInstance: {fileID: 4209179826902047189}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &798605196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 798605193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/Music/HighriseCity/1
-  PlayEvent: 0
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!1001 &1039822648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -964,6 +1091,41 @@ PrefabInstance:
       propertyPath: m_PointLightInnerRadius
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2433859298518440472, guid: 485d37a33f827084daf2c73800d1f88c,
+        type: 3}
+      propertyPath: DamageEventSFX
+      value: event:/Character/Damage/DamageTaken
+      objectReference: {fileID: 0}
+    - target: {fileID: 2433859298518440472, guid: 485d37a33f827084daf2c73800d1f88c,
+        type: 3}
+      propertyPath: ShowEvents
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2433859298518440472, guid: 485d37a33f827084daf2c73800d1f88c,
+        type: 3}
+      propertyPath: JUMP_SFX_PATH
+      value: event:/Character/Footsteps/PlayerFootsteps
+      objectReference: {fileID: 0}
+    - target: {fileID: 2433859298518440472, guid: 485d37a33f827084daf2c73800d1f88c,
+        type: 3}
+      propertyPath: DAMAGE_SFX_PATH
+      value: event:/Character/Damage/DamageTaken
+      objectReference: {fileID: 0}
+    - target: {fileID: 2433859298518440472, guid: 485d37a33f827084daf2c73800d1f88c,
+        type: 3}
+      propertyPath: SHOOT_SFX_PATH
+      value: event:/Character/Weapon/Shot
+      objectReference: {fileID: 0}
+    - target: {fileID: 2433859298518440472, guid: 485d37a33f827084daf2c73800d1f88c,
+        type: 3}
+      propertyPath: MaxHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2433859298518440472, guid: 485d37a33f827084daf2c73800d1f88c,
+        type: 3}
+      propertyPath: MaxMana
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4802909909251893578, guid: 485d37a33f827084daf2c73800d1f88c,
         type: 3}
       propertyPath: m_Name
@@ -1023,6 +1185,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802909910358940037, guid: 485d37a33f827084daf2c73800d1f88c,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.009693861
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802909910358940037, guid: 485d37a33f827084daf2c73800d1f88c,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.7142062
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802909910358940037, guid: 485d37a33f827084daf2c73800d1f88c,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.56535465
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802909910358940037, guid: 485d37a33f827084daf2c73800d1f88c,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.8692907
       objectReference: {fileID: 0}
     - target: {fileID: 7249425373229711567, guid: 485d37a33f827084daf2c73800d1f88c,
         type: 3}

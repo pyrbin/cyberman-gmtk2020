@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using Unity.Mathematics;
 using UnityEngine;
 
 public class Enemy : MapEntity
 {
+    [EventRef]
+    public string DeathSound;
+
     public int MaxHealth = 3;
     public int Health
     {
@@ -30,6 +34,7 @@ public class Enemy : MapEntity
 
     public void KillEnemy()
     {
+        //FMODUnity.RuntimeManager.PlayOneShot(DeathSound);
         gameObject.SetActive(false);
         Destroy(this, 0f);
     }

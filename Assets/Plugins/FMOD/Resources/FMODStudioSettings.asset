@@ -15,7 +15,7 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: FMOD Projects/Copy_FMOD_GameJam 2020 - Out of Control.fspro
+  sourceProjectPath: FMOD Projects/Final_Version_FMOD_GameJam 2020 - Out of Control.fspro
   sourceBankPath: FMOD Projects\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
@@ -24,7 +24,7 @@ MonoBehaviour:
   EncryptionKey: 
   ImportType: 0
   TargetAssetPath: FMODBanks
-  LoggingLevel: 2
+  LoggingLevel: 0
   SpeakerModeSettings:
   - Platform: 2
     Value: 3

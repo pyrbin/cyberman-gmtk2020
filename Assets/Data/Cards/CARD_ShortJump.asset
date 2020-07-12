@@ -16,5 +16,6 @@ MonoBehaviour:
   Description: 
   Cost: 2
   Rarity: 8
-  Background: {fileID: 21300000, guid: 640b31ed4bdacc44181311df0816122c, type: 3}
+  Background: {fileID: 21300000, guid: bf21c6eb3e564c94cb64d3ec83240b3c, type: 3}
+  SFX_Path: event:/Control/Cards
   JumpMod: 1.5

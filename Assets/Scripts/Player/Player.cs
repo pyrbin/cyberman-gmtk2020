@@ -18,9 +18,12 @@ public class Player : MonoBehaviour
 
     private CharacterController Controller;
 
-    private readonly string JUMP_SFX_PATH = "Ambience/FrozenHimalayas/HimalayaAmbience";
-    private readonly string DAMAGE_SFX_PATH = "Ambience/FrozenHimalayas/HimalayaAmbience";
-    private readonly string SHOOT_SFX_PATH = "Ambience/FrozenHimalayas/HimalayaAmbience";
+    [EventRef]
+    public string JUMP_SFX_PATH = "Ambience/FrozenHimalayas/HimalayaAmbience";
+    [EventRef]
+    public string DAMAGE_SFX_PATH = "Ambience/FrozenHimalayas/HimalayaAmbience";
+    [EventRef]
+    public string SHOOT_SFX_PATH = "Ambience/FrozenHimalayas/HimalayaAmbience";
 
     public float ManaReg = 1.5f;
 
@@ -59,18 +62,23 @@ public class Player : MonoBehaviour
     public void Jump(float mod = 1f)
     {
         Controller.Jump(mod);
-        FMODUnity.RuntimeManager.PlayOneShot("event:/" + JUMP_SFX_PATH);
+        FMODUnity.RuntimeManager.PlayOneShot(JUMP_SFX_PATH);
     }
     public void Slide(float dur) { if (!Controller.IsSliding) StartCoroutine(SlideFor(dur)); }
     public void Hover(float dur) { if (!Controller.IsSliding) StartCoroutine(SlideFor(dur, true)); }
     public void Boost(float dur, float mod = 1.5f) { StartCoroutine(BoostFor(dur, mod)); }
     public void PauseMovement(float dur) { StartCoroutine(DontMoveFor(dur)); }
-    public void Shoot() { GunHolder.GetComponent<Animation>().Play("gun_fire"); }
+    public void Shoot()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(SHOOT_SFX_PATH);
+        GunHolder.GetComponent<Animation>().Play("gun_fire");
+    }
+
 
     public bool PlayCard(Card card)
     {
         if (card.Cost > Mana) return false;
-        FMODUnity.RuntimeManager.PlayOneShot("event:/" + card.SFX_Path);
+        FMODUtil.PlayOneShot(card.SFX_Path, "Card", card.SFX_Parameter);
         card.OnUse(this);
         Mana -= card.Cost;
         return true;
@@ -80,7 +88,7 @@ public class Player : MonoBehaviour
     {
         Health -= val;
         OnHealthChangeEvent.Invoke(-val);
-        FMODUnity.RuntimeManager.PlayOneShot("event:/" + DAMAGE_SFX_PATH);
+        FMODUnity.RuntimeManager.PlayOneShot(DAMAGE_SFX_PATH);
         if (IsDead())
         {
             OnDeathEvent.Invoke();

@@ -55,7 +55,7 @@
 			<destination>{732c0571-8742-4921-b4d0-26cb32c5cb0b}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{98dc93d7-5e7a-4ea0-8e2b-d3dd1f823125}</destination>
+			<destination>{70b5dcc3-7eff-4999-b591-8b4d1a41786d}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{184fc512-ce45-486c-8124-806bc05943f1}" />
@@ -124,7 +124,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{c25cdc9a-fa13-467f-b554-630d444d0c4a}">
 		<property name="volume">
-			<value>-13.5</value>
+			<value>-31</value>
 		</property>
 		<property name="name">
 			<value>WindHeavy</value>
@@ -152,7 +152,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{34f71ff2-ab6d-464d-b764-ef1b51d7b8b0}">
 		<property name="volume">
-			<value>-8.5</value>
+			<value>-15</value>
 		</property>
 		<property name="name">
 			<value>WindBlizzard</value>

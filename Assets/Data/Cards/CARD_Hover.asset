@@ -17,5 +17,7 @@ MonoBehaviour:
   Cost: 4
   Rarity: 2
   Background: {fileID: 21300000, guid: a023ee53e60e601449ba79671ccb7414, type: 3}
+  SFX_Path: event:/Control/Cards
+  SFX_Parameter: 4
   Duration: 2
   Hover: 1
