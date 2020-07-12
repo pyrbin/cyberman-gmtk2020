@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Integration/Integration.unity
     guid: 1103292e70e6ddb4b8d92a02d4390ce9
+  - enabled: 1
+    path: Assets/Scenes/CharacterController/CharacterController.unity
+    guid: a5baabae69688ec449d157a68efb2aa3
   m_configObjects: {}

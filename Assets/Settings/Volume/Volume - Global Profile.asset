@@ -66,6 +66,7 @@ MonoBehaviour:
   - {fileID: 3073013211674601629}
   - {fileID: 8700302506848081517}
   - {fileID: 3056027094598514801}
+  - {fileID: 5804099220517314265}
 --- !u!114 &2286385544819728602
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -82,7 +83,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.15
+    m_Value: 0.4
     min: 0
     max: 1
 --- !u!114 &2719411127564978970
@@ -182,6 +183,83 @@ MonoBehaviour:
     m_Value: 0.05
     min: 0
     max: 0.2
+--- !u!114 &5804099220517314265
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
+  m_Name: Vignette
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  color:
+    m_OverrideState: 1
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    hdr: 0
+    showAlpha: 0
+    showEyeDropper: 1
+  center:
+    m_OverrideState: 1
+    m_Value: {x: 0.5, y: 0.5}
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.207
+    min: 0
+    max: 1
+  smoothness:
+    m_OverrideState: 1
+    m_Value: 0.214
+    min: 0.01
+    max: 1
+  rounded:
+    m_OverrideState: 1
+    m_Value: 0
+--- !u!114 &8546212768329771872
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37c03fc4b4d8a54889494c7908254b2, type: 3}
+  m_Name: TutorialComponent
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  displayDiffuseOnly:
+    m_OverrideState: 0
+    m_Value: 0
+  displayNormalsWS:
+    m_OverrideState: 0
+    m_Value: 0
+  displayNormalsVS:
+    m_OverrideState: 0
+    m_Value: 0
+  displayGeometricNormalsWS:
+    m_OverrideState: 0
+    m_Value: 0
+  displayGeometricNormalsVS:
+    m_OverrideState: 0
+    m_Value: 0
+  displayDepth:
+    m_OverrideState: 0
+    m_Value: 0
+  displayRoughness:
+    m_OverrideState: 0
+    m_Value: 0
+  outlineColor:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 0}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
 --- !u!114 &8700302506848081517
 MonoBehaviour:
   m_ObjectHideFlags: 3
