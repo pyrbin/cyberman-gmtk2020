@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Slide
   Description: 
-  Cost: 8
+  Cost: 5
   Rarity: 1
   Background: {fileID: -2992483585089224048, guid: 655518ff5ed8ad14683b2166fdc2e705,
     type: 3}
-  Duration: 1
+  Duration: 4
   Hover: 0
