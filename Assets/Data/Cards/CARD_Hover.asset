@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Hover
   Description: 
-  Cost: 2
+  Cost: 4
   Rarity: 2
   Background: {fileID: 21300000, guid: 640b31ed4bdacc44181311df0816122c, type: 3}
-  Duration: 1
+  Duration: 2
   Hover: 1
