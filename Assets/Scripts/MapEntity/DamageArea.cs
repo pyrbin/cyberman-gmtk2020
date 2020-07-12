@@ -14,7 +14,7 @@ public class DamageArea : MapEntity
     [Range(1, 3)]
     public ushort Damage;
 
-    public DamageDirection Dir = DamageDirection.All;
+    public bool DontDamageFromTop = false;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,6 +23,17 @@ public class DamageArea : MapEntity
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        if(DontDamageFromTop)
+        {
+            foreach (var cnt in other.contacts)
+            {
+                if (cnt.normal.y != -1f)
+                    continue;
+                else
+                    return;
+            }
+        }
+
         DamageFunc(other.gameObject);
     }
 

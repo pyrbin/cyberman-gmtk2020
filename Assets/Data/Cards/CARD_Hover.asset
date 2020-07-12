@@ -16,6 +16,6 @@ MonoBehaviour:
   Description: 
   Cost: 4
   Rarity: 2
-  Background: {fileID: 21300000, guid: 640b31ed4bdacc44181311df0816122c, type: 3}
+  Background: {fileID: 21300000, guid: a023ee53e60e601449ba79671ccb7414, type: 3}
   Duration: 2
   Hover: 1
