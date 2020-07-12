@@ -18,6 +18,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-6909632451041411034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PlayerFootsteps/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 1
+  Max: 3
+  Default: 1
+  Exists: 1
 --- !u!114 &-6183787495313002371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,7 +85,7 @@ MonoBehaviour:
   Path: event:/Ambience/FrozenHimalayas/HimalayaAmbience
   guid: 10e382f3c1e46945bf3ab92678f8b54b
   Banks:
-  - {fileID: 2643203509690806848}
+  - {fileID: -4415609531768799394}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -76,6 +93,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 76500
+--- !u!114 &-4415609531768799394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Projects/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637301694137956912
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-2713135038445831560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,7 +126,7 @@ MonoBehaviour:
   Path: event:/Ambience/LavaCaverns/AmbienceCavern
   guid: 0f59a664614fc64897b8648756149f57
   Banks:
-  - {fileID: 2643203509690806848}
+  - {fileID: -4415609531768799394}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -132,7 +167,7 @@ MonoBehaviour:
   Path: event:/Music/HighriseCity/1
   guid: 4527f8d194ae1242a89a9b134523bfcb
   Banks:
-  - {fileID: 2643203509690806848}
+  - {fileID: -4415609531768799394}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -171,7 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 3797414501917357462}
-  - {fileID: 2643203509690806848}
+  - {fileID: -4415609531768799394}
   EditorEvents:
   - {fileID: -2713135038445831560}
   - {fileID: -4453708408287569771}
@@ -180,10 +215,10 @@ MonoBehaviour:
   - {fileID: -2487025519994361833}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 2643203509690806848}
+  - {fileID: -4415609531768799394}
   StringsBanks:
   - {fileID: 3797414501917357462}
-  stringsBankWriteTime: 637301626168617654
+  stringsBankWriteTime: 637301694137966900
   cacheVersion: 3
 --- !u!114 &284989385792702868
 MonoBehaviour:
@@ -275,7 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD Projects/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637301626168617654
+  lastModified: 637301694137966900
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -334,12 +369,12 @@ MonoBehaviour:
   Path: event:/Character/Footsteps/PlayerFootsteps
   guid: 81b4ebc30124064e81f22e29a5ade192
   Banks:
-  - {fileID: 2643203509690806848}
+  - {fileID: -4415609531768799394}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -6169629259078224548}
+  - {fileID: -6909632451041411034}
   MinDistance: 0
   MaxDistance: 0
   Length: 505
@@ -358,7 +393,7 @@ MonoBehaviour:
   Path: event:/Ambience/HighriseCity/CityAmbience
   guid: 86882df3a0701c439ac8ee8bf309795f
   Banks:
-  - {fileID: 2643203509690806848}
+  - {fileID: -4415609531768799394}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0

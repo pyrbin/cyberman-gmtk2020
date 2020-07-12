@@ -223,21 +223,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.941
+  m_FalloffIntensity: 1
   m_Color: {r: 0.6018259, g: 0.8584906, b: 0.5790762, a: 1}
   m_Intensity: 1
-  m_LightVolumeOpacity: 0.032
+  m_LightVolumeOpacity: 0.102
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
-  m_ShadowIntensity: 0
-  m_ShadowVolumeIntensity: 0
+  m_ShadowIntensity: 0.245
+  m_ShadowVolumeIntensity: 0.259
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 6
+  m_PointLightInnerRadius: 1
+  m_PointLightOuterRadius: 8
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -345,6 +345,9 @@ GameObject:
   - component: {fileID: 4802909909251893579}
   - component: {fileID: 4802909909251893568}
   - component: {fileID: 2433859298518440472}
+  - component: {fileID: 1598801474209327362}
+  - component: {fileID: 1466734238}
+  - component: {fileID: 1466734239}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -447,7 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1027ad87959f2044ba83050f37ec424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ManaReg: 1.5
+  ManaReg: 1
   MaxHealth: 3
   MaxMana: 10
   GunHolder: {fileID: 633778152}
@@ -470,7 +473,75 @@ MonoBehaviour:
         m_CallState: 2
   OnDeathEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1466734239}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1598801474209327362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4802909909251893578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe097739f9cdb514fbafa3f25a403a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 2223533740066688663}
+  MaxRotation: 3
+  GrowthFactor: 0.5
+--- !u!114 &1466734238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4802909909251893578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90dfc2f93e3d1814b9b676fc9ad2ecef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToDeath: 40
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1466734239}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1466734239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4802909909251893578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f64771f08b5bc64ea6d2ffa3115a97c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IndexSceneToLoad: 2
 --- !u!1 &4802909910358940035
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,8 +586,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0.008687019, y: -0.5}
+  m_Size: {x: 0.750968, y: 2}
   m_Direction: 0
 --- !u!1 &4802909910458192370
 GameObject:
@@ -704,7 +775,7 @@ SpriteShapeRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -726,7 +797,7 @@ SpriteShapeRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Color: {r: 0.066037714, g: 0.066037714, b: 0.066037714, a: 1}
+  m_Color: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: b281b91a70a624a0da1c43adc1c30c7b, type: 3}
   m_Sprites:
@@ -740,8 +811,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: 1.4739952, y: 0.07170105, z: -0.00005}
-    m_Extent: {x: 18.855923, y: 15.547533, z: 0.00005}
+    m_Center: {x: 4.4591484, y: -1.6243114, z: -0.00005}
+    m_Extent: {x: 42.48815, y: 26.41404, z: 0.00005}
 --- !u!114 &7267600568165747144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,9 +828,9 @@ MonoBehaviour:
   m_Spline:
     m_IsOpenEnded: 0
     m_ControlPoints:
-    - position: {x: -15.099123, y: -14.649997, z: 0}
-      leftTangent: {x: 0.5359745, y: -0.0004825592, z: 0}
-      rightTangent: {x: -0.5359745, y: 0.0004825592, z: 0}
+    - position: {x: -34.85843, y: -21.92974, z: 0}
+      leftTangent: {x: 0.5359726, y: -0.0004825592, z: 0}
+      rightTangent: {x: -0.5359726, y: 0.0004825592, z: 0}
       mode: 1
       height: 1
       bevelCutoff: 0
@@ -767,9 +838,9 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: -16.880888, y: 15.095522, z: 0}
-      leftTangent: {x: -1.0023346, y: 0.0010557175, z: 0}
-      rightTangent: {x: 1.0023346, y: -0.0010557175, z: 0}
+    - position: {x: -37.58561, y: 21.429844, z: 0}
+      leftTangent: {x: -1.0023346, y: 0.0010566711, z: 0}
+      rightTangent: {x: 1.0023346, y: -0.0010566711, z: 0}
       mode: 1
       height: 1
       bevelCutoff: 0
@@ -777,7 +848,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 2
-    - position: {x: 19.834187, y: 15.371502, z: 0}
+    - position: {x: 46.495064, y: 24.542088, z: 0}
       leftTangent: {x: -1.0005913, y: -0.0016918182, z: 0}
       rightTangent: {x: 1.0005913, y: 0.0016918182, z: 0}
       mode: 1
@@ -787,9 +858,9 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 18.000494, y: -15.232975, z: 0}
-      leftTangent: {x: 0.5439167, y: 0.00042247772, z: 0}
-      rightTangent: {x: -0.5439148, y: -0.00042247772, z: 0}
+    - position: {x: 43.953114, y: -27.8223, z: 0}
+      leftTangent: {x: 0.5439148, y: 0.0004234314, z: 0}
+      rightTangent: {x: -0.5439148, y: -0.0004234314, z: 0}
       mode: 1
       height: 1
       bevelCutoff: 0

@@ -22,6 +22,8 @@ public abstract class Card : ScriptableObject
     [BoxGroup("Visuals")]
     [ShowAssetPreview]
     public Sprite Background;
+    public string SFX_Path = "Unknown";
+
 
     public abstract void OnUse(Player player);
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using FMODUnity;
 using NaughtyAttributes;
 using Unity.Mathematics;
 using UnityEngine;
@@ -14,7 +15,12 @@ public class OnDeath : UnityEvent { }
 public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
+
     private CharacterController Controller;
+
+    private readonly string JUMP_SFX_PATH = "Ambience/FrozenHimalayas/HimalayaAmbience";
+    private readonly string DAMAGE_SFX_PATH = "Ambience/FrozenHimalayas/HimalayaAmbience";
+    private readonly string SHOOT_SFX_PATH = "Ambience/FrozenHimalayas/HimalayaAmbience";
 
     public float ManaReg = 1.5f;
 
@@ -50,7 +56,11 @@ public class Player : MonoBehaviour
 
     #region API
 
-    public void Jump(float mod = 1f) { Controller.Jump(mod); }
+    public void Jump(float mod = 1f)
+    {
+        Controller.Jump(mod);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/" + JUMP_SFX_PATH);
+    }
     public void Slide(float dur) { if (!Controller.IsSliding) StartCoroutine(SlideFor(dur)); }
     public void Hover(float dur) { if (!Controller.IsSliding) StartCoroutine(SlideFor(dur, true)); }
     public void Boost(float dur, float mod = 1.5f) { StartCoroutine(BoostFor(dur, mod)); }
@@ -60,6 +70,7 @@ public class Player : MonoBehaviour
     public bool PlayCard(Card card)
     {
         if (card.Cost > Mana) return false;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/" + card.SFX_Path);
         card.OnUse(this);
         Mana -= card.Cost;
         return true;
@@ -68,20 +79,20 @@ public class Player : MonoBehaviour
     public void Damage(ushort val)
     {
         Health -= val;
-
         OnHealthChangeEvent.Invoke(-val);
-
+        FMODUnity.RuntimeManager.PlayOneShot("event:/" + DAMAGE_SFX_PATH);
         if (IsDead())
         {
-            Debug.Log("Player died ;(");
             OnDeathEvent.Invoke();
         }
     }
+
     public void Heal(ushort val)
     {
         Health += val;
         OnHealthChangeEvent.Invoke(val);
     }
+
     public bool IsDead() { return Health <= 0; }
 
     #endregion

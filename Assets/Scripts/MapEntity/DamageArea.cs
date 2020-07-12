@@ -23,7 +23,7 @@ public class DamageArea : MapEntity
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(DontDamageFromTop)
+        if (DontDamageFromTop)
         {
             foreach (var cnt in other.contacts)
             {
