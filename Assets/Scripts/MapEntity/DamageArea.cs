@@ -23,22 +23,7 @@ public class DamageArea : MapEntity
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        bool valid = false;
-        switch (Dir)
-        {
-            case DamageDirection.Up:
-                valid = (math.abs(other.relativeVelocity.y) > 0);
-                break;
-            case DamageDirection.Horizontal:
-                valid = (math.abs(other.relativeVelocity.y) <= 0.5f);
-                break;
-            case DamageDirection.All:
-                valid = true;
-                break;
-        }
-
-        if (valid)
-            DamageFunc(other.gameObject);
+        DamageFunc(other.gameObject);
     }
 
     void DamageFunc(GameObject other)
