@@ -9,14 +9,16 @@ public class HandRefiller : MonoBehaviour
     [ReorderableList]
     [SerializeField]
     public List<Card> Deck;
-    public List<GameObject> CardHolderList;
+    public List<UI_CardHolder> CardHolderList;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         for(int i = 0; i < CardHolderList.Count; i++)
         {
             DrawCard(i);
+            CardHolderList[i].Id = (ushort)i;
+            CardHolderList[i].HandRefiller = this;
         }
     }
 
@@ -53,15 +55,17 @@ public class HandRefiller : MonoBehaviour
     {
         var holder = CardHolderList[cardPos];
         var card = Deck[UnityEngine.Random.Range(0, Deck.Count-1)];
-        holder.GetComponent<UI_CardHolder>().SetCard(card);
-        holder.SetActive(true);
+        holder.SetCard(card);
+        holder.gameObject.SetActive(true);
     }
 
     public void PlayCard(int cardPos)
     {
         var holder = CardHolderList[cardPos];
-        holder.SetActive(false);
-        holder.GetComponent<UI_CardHolder>().SetEmpty();
+        holder.gameObject.SetActive(false);
+        holder.SetEmpty();
         DrawCard(cardPos);
     }
+
+
 }
