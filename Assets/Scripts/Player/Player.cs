@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     public static Player Instance { get; private set; }
     private CharacterController Controller;
 
+    public float ManaReg = 1.5f;
+
     public int MaxHealth = 3;
 
     public int Health
@@ -24,16 +26,27 @@ public class Player : MonoBehaviour
         set { innerHealth = math.min(value, MaxHealth); }
     }
 
+    public int MaxMana = 10;
+
+    public int Mana
+    {
+        get { return innerMana; }
+        set { innerMana = math.min(value, MaxMana); }
+    }
+
     public GunFire GunHolder;
+    public Transform Wheel;
 
     public bool ShowEvents;
 
     [ShowIf("ShowEvents")]
     public OnHealthChange OnHealthChangeEvent;
+
     [ShowIf("ShowEvents")]
     public OnDeath OnDeathEvent;
 
     private int innerHealth;
+    private int innerMana;
 
     #region API
 
@@ -43,6 +56,14 @@ public class Player : MonoBehaviour
     public void Boost(float dur, float mod = 1.5f) { StartCoroutine(BoostFor(dur, mod)); }
     public void PauseMovement(float dur) { StartCoroutine(DontMoveFor(dur)); }
     public void Shoot() { GunHolder.GetComponent<Animation>().Play("gun_fire"); }
+
+    public bool PlayCard(Card card)
+    {
+        if (card.Cost > Mana) return false;
+        card.OnUse(this);
+        Mana -= card.Cost;
+        return true;
+    }
 
     public void Damage(ushort val)
     {
@@ -84,6 +105,9 @@ public class Player : MonoBehaviour
 
         Controller = GetComponent<CharacterController>();
         Health = MaxHealth;
+        Mana = MaxMana;
+
+        StartCoroutine(ManaRegen());
     }
 
     IEnumerator SlideFor(float dur, bool hover = false)
@@ -101,6 +125,15 @@ public class Player : MonoBehaviour
         Controller.SpeedMod = mod;
         yield return new WaitForSeconds(dur);
         Controller.SpeedMod = null;
+    }
+
+    IEnumerator ManaRegen()
+    {
+        for (; ; )
+        {
+            yield return new WaitForSeconds(ManaReg);
+            Mana = math.min(MaxMana, Mana + 1);
+        }
     }
 
     IEnumerator DontMoveFor(float dur)
