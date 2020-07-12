@@ -32,7 +32,7 @@ public class PlatformEntity : MapEntity
         {
             var tile = Instantiate(Tile, this.transform);
             tile.transform.localPosition = new float3(i, 0, 0);
-            tile.GetComponent<SpriteRenderer>().sprite = generator.tile.sprite;
+            tile.GetComponent<SpriteRenderer>().sprite = generator.topTile.sprite;
 
             if (UnityEngine.Random.Range(0f, 1f) <= Chance && (entt.GetType() != this.GetType()))
             {
