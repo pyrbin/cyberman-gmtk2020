@@ -539,6 +539,42 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 65eaec8ea42d3b94098f58ecb4bb3f7e,
         type: 3}
+    - target: {fileID: 7249425373229711567, guid: 485d37a33f827084daf2c73800d1f88c,
+        type: 3}
+      propertyPath: m_Sprites.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249425373229711567, guid: 485d37a33f827084daf2c73800d1f88c,
+        type: 3}
+      propertyPath: m_Sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d,
+        type: 3}
+    - target: {fileID: 7249425373229711567, guid: 485d37a33f827084daf2c73800d1f88c,
+        type: 3}
+      propertyPath: m_LocalAABB.m_Center.y
+      value: 0.06926346
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249425373229711567, guid: 485d37a33f827084daf2c73800d1f88c,
+        type: 3}
+      propertyPath: m_LocalAABB.m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249425373229711567, guid: 485d37a33f827084daf2c73800d1f88c,
+        type: 3}
+      propertyPath: m_LocalAABB.m_Extent.x
+      value: 18.60593
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249425373229711567, guid: 485d37a33f827084daf2c73800d1f88c,
+        type: 3}
+      propertyPath: m_LocalAABB.m_Extent.y
+      value: 15.302238
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249425373229711567, guid: 485d37a33f827084daf2c73800d1f88c,
+        type: 3}
+      propertyPath: m_LocalAABB.m_Extent.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 485d37a33f827084daf2c73800d1f88c, type: 3}
 --- !u!4 &930593639 stripped
@@ -859,6 +895,39 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2069995166}
     m_Modifications:
+    - target: {fileID: 939582164523932366, guid: d641abcd13d0120418b626e5fd7d55bc,
+        type: 3}
+      propertyPath: mapEntities.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 939582164523932366, guid: d641abcd13d0120418b626e5fd7d55bc,
+        type: 3}
+      propertyPath: mapEntities.Array.data[2]
+      value: 
+      objectReference: {fileID: 8536653698301452140, guid: 30289e2d09b7a3846bc9268e5ccb4fc8,
+        type: 3}
+    - target: {fileID: 939582164523932366, guid: d641abcd13d0120418b626e5fd7d55bc,
+        type: 3}
+      propertyPath: mapEntities.Array.data[3]
+      value: 
+      objectReference: {fileID: 1306315385510220610, guid: 633f466df84f4394e98cb25244e8f465,
+        type: 3}
+    - target: {fileID: 939582164523932366, guid: d641abcd13d0120418b626e5fd7d55bc,
+        type: 3}
+      propertyPath: mapEntities.Array.data[1]
+      value: 
+      objectReference: {fileID: 1306315385510220610, guid: 633f466df84f4394e98cb25244e8f465,
+        type: 3}
+    - target: {fileID: 939582164523932366, guid: d641abcd13d0120418b626e5fd7d55bc,
+        type: 3}
+      propertyPath: spawnRange
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 939582165367550067, guid: d641abcd13d0120418b626e5fd7d55bc,
+        type: 3}
+      propertyPath: spawnRange
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 1164964571977354887, guid: d641abcd13d0120418b626e5fd7d55bc,
         type: 3}
       propertyPath: m_TileAssetArray.Array.data[0].m_Data
@@ -936,6 +1005,23 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 930593639}
+    - target: {fileID: 2913518307221393217, guid: d641abcd13d0120418b626e5fd7d55bc,
+        type: 3}
+      propertyPath: tile
+      value: 
+      objectReference: {fileID: 11400000, guid: c34d2fc87e5ceb84a9c42559121b697f,
+        type: 2}
+    - target: {fileID: 2913518307221393217, guid: d641abcd13d0120418b626e5fd7d55bc,
+        type: 3}
+      propertyPath: topTile
+      value: 
+      objectReference: {fileID: 11400000, guid: 65620ee780b0623418b08da8f217575d,
+        type: 2}
+    - target: {fileID: 5263787001964004173, guid: d641abcd13d0120418b626e5fd7d55bc,
+        type: 3}
+      propertyPath: spawnRange
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 5895647373964640928, guid: d641abcd13d0120418b626e5fd7d55bc,
         type: 3}
       propertyPath: m_Name
@@ -946,6 +1032,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 930593639}
+    - target: {fileID: 7811579406478163071, guid: d641abcd13d0120418b626e5fd7d55bc,
+        type: 3}
+      propertyPath: tile
+      value: 
+      objectReference: {fileID: 11400000, guid: 4ece928cc4a3339499013493cdc7c153,
+        type: 2}
+    - target: {fileID: 7811579406478163071, guid: d641abcd13d0120418b626e5fd7d55bc,
+        type: 3}
+      propertyPath: topTile
+      value: 
+      objectReference: {fileID: 11400000, guid: b1dc07f82f8d4fc4484ab465ef8d3d75,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d641abcd13d0120418b626e5fd7d55bc, type: 3}
 --- !u!4 &1820122735914346136 stripped
