@@ -16,7 +16,12 @@ public class AddGaps : MapFunction
         int sectionWidth = 0;
         int currentGapSize = 0;
 
-        for (int x = 0; x < map.GetUpperBound(0); x++)
+        int startSpawnGaps = 30;
+
+        if (startSpawnGaps > map.GetUpperBound(0))
+            return;
+
+        for (int x = startSpawnGaps; x < map.GetUpperBound(0); x++)
         {
             sectionWidth++;
             if (sectionWidth >= minWidth || gap == null)
