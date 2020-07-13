@@ -1,31 +1,17 @@
-<a href="#"><img id="#logo" align="left" src="https://via.placeholder.com/100" width="150" height="150" style="margin-right: 15px;"></a>
+<a href="#"><img id="#logo" align="left" src="https://github.com/pyrbin/cyberman-gmtk2020/blob/develop/Assets/Resources/Sprites/CyborgDuder.png" width="150" height="150" style="margin-right: 15px;"></a>
 
-## title
+## Cyberman 
 
-**title**
+**You control a cyber agent but the enemies have hacked your control**
 
 <br>
+<br>
 
-#### Table of Contents
+Made for: *GMTK 2020 GameJam*
 
-- [Introduction](#Introduction)
+Theme: Out of Control
 
-## Introduction
+Very very very bad don't look, but epic soundtracks/voiceovers B)
 
-TODO
+https://pyrbin.itch.io/cyberman
 
-## Developers
-
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top">
-        <a href="https://github.com/pyrbin">
-            <img width="100" height="100" src="https://github.com/pyrbin.png?s=100">
-            <br>
-            pyrbin
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
